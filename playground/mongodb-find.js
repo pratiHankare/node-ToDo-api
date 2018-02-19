@@ -12,12 +12,21 @@ const db =client.db('TodoApp');
   /*fetching  of the  data present in the Todos table.
   .find is a method to do so
   toArray is going to present data in the form of object fetching from document*/
-  db.collection('Todos').find().toArray().then((docs)=>{
+  /**db.collection('Todos').find().toArray().then((docs)=>{
    console.log('Todos');
    console.log(JSON.stringify(docs,undefined,2));
 },(err)=>{
   console.log('Unable to fetch todos',err);
+});**/
+
+/**fetch the data from the collection of which task are either completed or not completed.**/
+db.collection('Todos').find({completed:false}).toArray().then((docs)=>{
+  console.log('ToDos');
+  console.log(JSON.stringify(docs,undefined,2));
+},(err)=>{
+    console.log('Unable to fetch todos',err);
 });
+
 
 
 //client.close();

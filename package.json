@@ -1,4 +1,4 @@
-{
+git remote add origin git@github.com:pratiHankare/node-ToDo-api.git{
   "name": "todo-api",
   "version": "1.0.0",
   "description": "the sample ToDo Api",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/pratiHankare/node-ToDo-api/issues"
   },
-  "homepage": "https://github.com/pratiHankare/node-ToDo-api#readme"
+  "homepage": "https://github.com/pratiHankare/node-ToDo-api#readme",
+  "dependencies": {
+    "mongodb": "^3.0.2"
+  }
 }
