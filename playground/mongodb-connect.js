@@ -1,5 +1,11 @@
 //mongoclient ->allows you to create a connection to server
 var MongoClient=require('mongodb').MongoClient;
+/*****Grabbing the property value from object using es6 destructor function******/
+var user={name:'andrew',age:25};
+var {name}=user;
+console.log(name);
+/***********************************************/
+
 //.connect ->method takes 2 arug=>1.url of connection may be amazon web services url or heroku url or localhost url 2.callabck function:- this function is thrown out when connection is either fail
 MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,client)=>{
   if(err){
