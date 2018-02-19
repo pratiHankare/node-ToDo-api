@@ -32,6 +32,8 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,client)=>{
       return console.log('Unable to connect to the server',err);
     }
     console.log(JSON.stringify(result.ops,undefined,2));
+    /*to fetch single value
+    console.log(result.ops[0]._id.getTimestamp);*/
   });
 
 client.close();
