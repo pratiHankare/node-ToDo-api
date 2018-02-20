@@ -21,15 +21,21 @@ const db=client.db('TodoApp');
 /*
 2.deleteOne->targets one document(row) & returns the same document so that user knows exactly which one deleted.
   Goal :- is to delete only one record regardless there many rows found statisfying the same condition.
+
+  db.collection('Todos').deleteOne({text:'have a breakfast'}).then((result)=>{
+    console.log(result);
+  });
+
 */
-db.collection('Todos').deleteOne({text:'have a breakfast'}).then((result)=>{
-  console.log(result);
-});
-
-
 /*
 3.findOneAndDelete->targets one document(row) & returns the same document so that user knows exactly which one deleted.
+  Goal: is to delete only one record bt also returning the same record is returning abck so that user knws exactly which record is deleted
 */
+db.collection('Todos').findOneAndDelete({completed:false}).then(
+  (result)=>{console.log(result);}
+);
+
+
 
 
 
