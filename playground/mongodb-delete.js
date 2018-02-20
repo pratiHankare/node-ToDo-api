@@ -12,13 +12,22 @@ const db=client.db('TodoApp');
 /*3 ways i can delete the data
 1.deleteMany->targets many documents(rows)
   Goal:find the all the rows based on critieria may be a duliplicay and delete those namy rows
-:*/
+
   db.collection('Todos').deleteMany({text:'something to do'}).then((result)=>{
     console.log(result);
   });
 
+*/
 /*
 2.deleteOne->targets one document(row) & returns the same document so that user knows exactly which one deleted.
+  Goal :- is to delete only one record regardless there many rows found statisfying the same condition.
+*/
+db.collection('Todos').deleteOne({text:'have a breakfast'}).then((result)=>{
+  console.log(result);
+});
+
+
+/*
 3.findOneAndDelete->targets one document(row) & returns the same document so that user knows exactly which one deleted.
 */
 
