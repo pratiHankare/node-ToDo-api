@@ -12,7 +12,7 @@ const db=client.db('TodoApp');
 
 /*Updation using
 1.findOneAndUpdate(fliter,update,options,callback);->will find the update record & will update it*/
-db.collection('Todos').findOneAndUpdate(
+/*db.collection('Todos').findOneAndUpdate(
   {//filter on basis of id
     _id:new ObjectID('5a8ab96bed04157118fd6f25')
   },
@@ -22,6 +22,28 @@ db.collection('Todos').findOneAndUpdate(
     }
   },
   {//options->the way data i want
+    returnOriginal:false
+  }
+).then(
+  (result)=>{
+    console.log(result);
+  }
+);*/
+
+db.collection('Users').findOneAndUpdate(
+  {
+    _id : new ObjectID("5a8bed2bc09b4a060c4dfb38")
+  },
+  {
+    $set:{
+      name:'Nitesh Sawant',
+      location:'sanquiliem'
+    },
+    $inc:{
+      age:1
+    }
+  },
+  {
     returnOriginal:false
   }
 ).then(
